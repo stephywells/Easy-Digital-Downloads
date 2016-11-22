@@ -54,17 +54,17 @@ class Tests_Discounts extends WP_UnitTestCase {
 
 	public function test_updating_discount_code() {
 		$post = array(
-			'name' => '20 Percent Off',
-			'type' => 'percent',
-			'amount' => '20',
-			'code' => '20OFF',
+			'name'              => '20 Percent Off',
+			'type'              => 'percent',
+			'amount'            => '20',
+			'code'              => '20OFF',
 			'product_condition' => 'all',
-			'start' => '12/12/2050 00:00:00',
-			'expiration' => '12/31/2050 00:00:00',
-			'max' => 10,
-			'uses' => 54,
-			'min_price' => 128,
-			'status' => 'active'
+			'start'             => '12/12/2050 00:00:00',
+			'expiration'        => '12/31/2050 00:00:00',
+			'max'               => 10,
+			'uses'              => 54,
+			'min_price'         => 128,
+			'status'            => 'active'
 		);
 
 		$updated_post_id = edd_store_discount( $post, $this->_post_id );
@@ -82,6 +82,36 @@ class Tests_Discounts extends WP_UnitTestCase {
 	public function test_discounts_exists() {
 		edd_update_discount_status( $this->_post_id, 'active' );
 		$this->assertTrue( edd_has_active_discounts() );
+	}
+
+	public function test_is_discount_active() {
+		$this->assertTrue( edd_is_discount_active( $this->_post_id, true ) );
+		$this->assertTrue( edd_is_discount_active( $this->_post_id, false ) );
+
+		$post = array(
+			'name'              => '20 Percent Off',
+			'type'              => 'percent',
+			'amount'            => '20',
+			'code'              => '20OFF',
+			'product_condition' => 'all',
+			'start'             => '12/12/1998 00:00:00',
+			'expiration'        => '12/31/1998 00:00:00',
+			'max'               => 10,
+			'uses'              => 54,
+			'min_price'         => 128,
+			'status'            => 'active'
+		);
+
+		$expired_post_id = edd_store_discount( $post );
+
+		$this->assertFalse( edd_is_discount_active( $expired_post_id, false ) );
+
+		$this->assertEquals( get_post_meta( $expired_post_id, '_edd_discount_status', true ), 'active' );
+
+		// Update DB
+		$this->assertFalse( edd_is_discount_active( $expired_post_id, true ) );
+		$this->assertEquals( get_post_meta( $expired_post_id, '_edd_discount_status', true ), 'expired' );
+		$this->assertEquals( get_post_status( $expired_post_id ), 'inactive' );
 	}
 
 	public function test_discount_exists() {
@@ -174,16 +204,53 @@ class Tests_Discounts extends WP_UnitTestCase {
 
 
 	public function test_get_discounted_amount() {
-		$this->markTestIncomplete('Fix this per #2302');
 		$this->assertEquals( '432', edd_get_discounted_amount( '20OFF', '540' ) );
-		$this->assertEqual( '150', edd_get_discounted_amount( 'DOUBLE', '75' ) );
-		$this->assertEqual( '9', edd_get_discounted_amount( 'FLAT', '1' ) );
+		$this->assertEquals( '150', edd_get_discounted_amount( 'DOUBLE', '75' ) );
+		$this->assertEquals( '10', edd_get_discounted_amount( '10FLAT', '20' ) );
+
+		// Test that an invalid Code returns the base price
+		$this->assertEquals( '10', edd_get_discounted_amount( 'FAKEDISCOUNT', '10' ) );
 	}
 
 	public function test_increase_discount_usage() {
-		//$this->markTestIncomplete('Fix this per #2302');
-		$uses = edd_increase_discount_usage( '20OFF' );
-		$this->assertSame( 55, $uses );
+		$id   = edd_get_discount_id_by_code( '20OFF' );
+		$uses = edd_get_discount_uses( $id );
+
+		$increased = edd_increase_discount_usage( '20OFF' );
+		$this->assertSame( $increased, $uses + 1 );
+
+		// Test missing codes
+		$this->assertFalse( edd_increase_discount_usage( 'INVALIDDISCOUNTCODE' ) );
+	}
+
+	public function test_discount_inactive_at_max() {
+		$current_usage = edd_get_discount_uses( $this->_post_id );
+		$max_uses      = edd_get_discount_max_uses( $this->_post_id );
+
+		update_post_meta( $this->_post_id, '_edd_discount_uses', $max_uses - 1 );
+
+		$this->assertEquals( get_post_meta( $this->_post_id, '_edd_discount_status', true ), 'active' );
+
+		$code = edd_get_discount_code( $this->_post_id );
+		edd_increase_discount_usage( $code );
+
+		$this->assertEquals( get_post_meta( $this->_post_id, '_edd_discount_status', true ), 'inactive' );
+		$this->assertEquals( get_post_status( $this->_post_id ), 'inactive' );
+
+		edd_decrease_discount_usage( $code );
+		$this->assertEquals( get_post_meta( $this->_post_id, '_edd_discount_status', true ), 'active' );
+		$this->assertEquals( get_post_status( $this->_post_id ), 'active' );
+	}
+
+	public function test_decrease_discount_usage() {
+		$id   = edd_get_discount_id_by_code( '20OFF' );
+		$uses = edd_get_discount_uses( $id );
+
+		$decreased = edd_decrease_discount_usage( '20OFF' );
+		$this->assertSame( $decreased, $uses - 1 );
+
+		// Test missing codes
+		$this->assertFalse( edd_decrease_discount_usage( 'INVALIDDISCOUNTCODE' ) );
 	}
 
 	public function test_formatted_discount_amount() {
@@ -281,4 +348,73 @@ class Tests_Discounts extends WP_UnitTestCase {
 		$this->assertEquals( '12.00', edd_get_cart_total() );
 
 	}
+
+	public function test_discountable_subtotal() {
+		edd_empty_cart();
+		$download_1 = EDD_Helper_Download::create_simple_download();
+		$download_2 = EDD_Helper_Download::create_simple_download();
+		$discount   = EDD_Helper_Discount::create_simple_flat_discount();
+
+		$post = array(
+			'name'              => 'Excludes',
+			'amount'            => '1',
+			'code'              => 'EXCLUDES',
+			'product_condition' => 'all',
+			'start'             => '12/12/2050 00:00:00',
+			'expiration'        => '12/31/2050 00:00:00',
+			'min_price'         => 23,
+			'status'            => 'active',
+			'excluded-products' => array( $download_2->ID ),
+		);
+
+		edd_store_discount( $post, $discount );
+
+		edd_add_to_cart( $download_1->ID );
+		edd_add_to_cart( $download_2->ID );
+		$this->assertEquals( '20', edd_get_cart_discountable_subtotal( $discount ) );
+
+		$download_3 = EDD_Helper_Download::create_simple_download();
+		edd_add_to_cart( $download_3->ID );
+		$this->assertEquals( '40', edd_get_cart_discountable_subtotal( $discount ) );
+
+		EDD_Helper_Download::delete_download( $download_1->ID );
+		EDD_Helper_Download::delete_download( $download_2->ID );
+		EDD_Helper_Download::delete_download( $download_3->ID );
+		EDD_Helper_Discount::delete_discount( $discount );
+	}
+
+	public function test_discount_min_excluded_products() {
+		edd_empty_cart();
+		$download_1 = EDD_Helper_Download::create_simple_download();
+		$download_2 = EDD_Helper_Download::create_simple_download();
+		$discount   = EDD_Helper_Discount::create_simple_flat_discount();
+
+		$post = array(
+			'name'              => 'Excludes',
+			'amount'            => '1',
+			'code'              => 'EXCLUDES',
+			'product_condition' => 'all',
+			'start'             => '12/12/2050 00:00:00',
+			'expiration'        => '12/31/2050 00:00:00',
+			'min_price'         => 23,
+			'status'            => 'active',
+			'excluded-products' => array( $download_2->ID ),
+		);
+
+		edd_store_discount( $post, $discount );
+
+		edd_add_to_cart( $download_1->ID );
+		edd_add_to_cart( $download_2->ID );
+		$this->assertFalse( edd_discount_is_min_met( $discount ) );
+
+		$download_3 = EDD_Helper_Download::create_simple_download();
+		edd_add_to_cart( $download_3->ID );
+		$this->assertTrue( edd_discount_is_min_met( $discount ) );
+
+		EDD_Helper_Download::delete_download( $download_1->ID );
+		EDD_Helper_Download::delete_download( $download_2->ID );
+		EDD_Helper_Download::delete_download( $download_3->ID );
+		EDD_Helper_Discount::delete_discount( $discount );
+	}
+
 }

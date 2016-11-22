@@ -1,21 +1,20 @@
 === Easy Digital Downloads ===
-Author URI: https://pippinsplugins.com
+Author URI: https://easydigitaldownloads.com
 Plugin URI: https://easydigitaldownloads.com
-Contributors: mordauk, sunnyratilal, chriscct7, section214, sumobi, sdavis2702, cklosows, mindctrl, topher1kenobe, sksmatt, SpencerFinnell
-Donate link: https://pippinsplugins.com/support-the-site
-Tags: download, downloads, e-store, eshop, digital downloads, e-downloads, ecommerce, e commerce, e-commerce, selling, wp-ecommerce, wp ecommerce, mordauk, Pippin Williamson, pippinsplugins
-Requires at least: 3.9.2
-Tested up to: 4.4
-
-Stable Tag: 2.4.9
+Contributors: easydigitaldownloads, mordauk, sunnyratilal, chriscct7, section214, sumobi, sdavis2702, cklosows, mindctrl, sksmatt, SpencerFinnell, johnstonphilip
+Donate link: https://easydigitaldownloads.com/donate/
+Tags: download, downloads, e-store, eshop, digital downloads, e-commerce, wp-ecommerce, wp ecommerce
+Requires at least: 4.0
+Tested up to: 4.7
+Stable Tag: 2.6.13
 
 License: GNU Version 2 or Any Later Version
 
-Sell digital downloads through WordPress with this complete digital downloads management plugin
+The easiest way to sell digital products with WordPress.
 
 == Description ==
 
-Easy Digital Downloads is a complete e-commerce solution for selling digital products in a light, performant, and easy to use plugin. Rather that attempting to provide every feature under the sun, Easy Digital Downloads makes selling digital simple and complete by providing just the features you need.
+Easy Digital Downloads is a complete e-commerce solution for selling digital and other non-physical products in a light, performant, and easy to use plugin. Rather than attempting to provide every feature under the sun, Easy Digital Downloads makes selling digital simple and complete by providing just the features you need.
 
 Features of the plugin include:
 
@@ -32,7 +31,7 @@ Features of the plugin include:
 * Detailed purchase and file download logs
 * Data export options for CSV and PDF
 * Add functionality with many [extensions](https://easydigitaldownloads.com/downloads/?utm_source=extensions&utm_medium=description_tab&utm_content=extensions&utm_campaign=readme)
-* Developer friendly with dozens of actions and filters. [View Codex](https://easydigitaldownloads.com/codex/index.html)
+* Developer friendly with dozens of actions and filters. [View developer documentation](http://docs.easydigitaldownloads.com/collection/174-developer-docs)
 
 More information at [Easy Digital Downloads.com](https://easydigitaldownloads.com/?utm_source=home&utm_medium=description_tab&utm_content=home&utm_campaign=readme).
 
@@ -42,7 +41,7 @@ More information at [Easy Digital Downloads.com](https://easydigitaldownloads.co
 
 **Sell and Track Software License Keys**
 
-[Software Licensing](https://easydigitaldownloads.com/downloads/software-licensing/?utm_source=extension&utm_medium=description_tab&utm_content=software-licensing&utm_campaign=readme) for Easy Digital Downloads provides a complete license key generation, activation, and checking system. It allows you to provide license keys along with your digital products that can then be used to properly license and activate the buyer’s copy of the software.
+[Software Licensing](https://easydigitaldownloads.com/downloads/software-licensing/?utm_source=extension&utm_medium=description_tab&utm_content=software-licensing&utm_campaign=readme) for Easy Digital Downloads provides a complete license key generation, activation, and checking system. It allows you to provide license keys along with your digital products that can then be used to properly license and activate the buyer's copy of the software.
 
 Includes a complete integration pack for delivering automatic upgrades for premium WordPress plugins and themes.
 
@@ -52,34 +51,7 @@ With extensions for [MailChimp](https://easydigitaldownloads.com/downloads/mail-
 
 **Languages**
 
-Easy Digital Downloads has been translated into the following languages:
-
-1. English (and British English)
-2. German
-3. Spanish
-4. French
-5. Italian
-6. Dutch
-7. European Portuguese
-8. Brazilian Portuguese
-9. Turkish
-10. Arabic
-11. Polish
-12. Russian
-13. Czech
-14. Japanese
-15. Farsi
-16. Finnish
-17. Hebrew
-18. Persian
-19. Finnish
-20. Slovak
-21. Swedish
-22. Romanian
-23. Hungarian
-24. Norwegian
-25. Khmer
-26. Lithuanian
+Easy Digital Downloads has been translated into more than two dozen languages. The complete list of languages can be found in our [FAQ](http://docs.easydigitaldownloads.com/article/1082-what-spoken-languages-does-easy-digital-downloads-support).
 
 Would you like to help translate the plugin into more languages? [Join our WP-Translations Community](http://docs.easydigitaldownloads.com/article/1023-translating-easy-digital-downloads).
 
@@ -93,25 +65,41 @@ Would you like to help translate the plugin into more languages? [Join our WP-Tr
 
 == Frequently Asked Questions ==
 
+= Where can I find complete documentation? =
+
+Full searchable docs can be found at [http://docs.easydigitaldownloads.com/](http://docs.easydigitaldownloads.com/?utm_source=docs&utm_medium=faq_tab&utm_content=documentation&utm_campaign=readme)
+
+= Is an SSL certificate required? =
+
+Easy Digital Downloads can function without one just fine, making it easy to set up in a testing or development environment.  We still strongly recommend you have an SSL certificate for your production web site, both for security and for the peace of mind of your customers. [Documentation here](http://docs.easydigitaldownloads.com/article/994-how-to-set-up-ssl?utm_source=docs&utm_medium=faq_tab&utm_content=documentation&utm_campaign=readme)
+
+= What themes work with Easy Digital Downloads? =
+
+Any properly written theme will work with Easy Digital Downloads.
+
+That said, we have a nice collection of free themes that come with support for Easy Digital Downloads, requiring much less design work on the part of the store owner.
+
+[See the free themes here.](https://easydigitaldownloads.com/themes/?utm_source=docs&utm_medium=faq_tab&utm_term=free_themes&utm_content=faqs&utm_campaign=readme)
+
 = How do I Show My Shopping Cart? =
 
-There are three ways you can show the downloads shopping cart:
+There are two ways you can show the downloads shopping cart:
 
-1. Use the short code and simply place [download_cart] on a page or within a text widget.
+1. Use the shortcode and simply place [download_cart] on a page or within a text widget.
 
 2. Use the included widget. Go to Appearance > Widgets and place the "Downloads Cart" widget into any widget area available.
 
-3. Use the template tag and place the following in the template file of your choosing:
-
-`echo edd_shopping_cart();`
-
-4. Is there a sample import file I can use to setup a demo store?
+= Is there a sample import file I can use to setup a demo store? =
 
 Yes! Simply go to Tools > Import and install the WordPress Importer, then navigate to wp-content/plugins/easy-digital-downloads/assets/ and select the sample-products-import.xml file. This will create several sample products and plugin pages for you.
 
+= Can I import all the products from my existing store into EDD? =
+
+We do have a [basic import solution](http://docs.easydigitaldownloads.com/article/216-can-i-import-and-export-products?utm_source=docs&utm_medium=faq_tab&utm_term=import_addon&utm_content=faqs&utm_campaign=readme) that imports a CSV file, so if you can get your data into the appropriate format then we can import it.
+
 = My Payments Marked as Pending =
 
-There are several reasons this happens. Please follow the suggestions [here](https://easydigitaldownloads.com/documentation/faqs/?utm_source=docs&utm_medium=faq_tab&utm_content=faqs&utm_campaign=readme).
+There are several reasons this happens. Please follow the suggestions [here](http://docs.easydigitaldownloads.com/article/190-payments-not-marked-as-complete?utm_source=docs&utm_medium=faq_tab&utm_content=faqs&utm_campaign=readme).
 
 = Getting a 404 error? =
 
@@ -119,24 +107,32 @@ To get rid of the 404 error when viewing a download, you need to resave your per
 
 = How do I Show the User's Purchase History? =
 
-Place the [purchase_history] short code on any page.
+Place the [purchase_history] shortcode on any page.
 
-If you want to just show a list of the files the user has purchased, use the [download_history] short code instead.
+If you want to just show a list of the files the user has purchased, use the [download_history] shortcode instead.
+
+= How do I display products? =
+
+There are several different ways, each well [documented](http://docs.easydigitaldownloads.com/category/870-product-display?utm_source=edd_readme&utm_medium=faq_tab&utm_content=faqs&utm_campaign=readme).
 
 = Can I Setup an Affiliate System? =
 
 Yes! EDD integrates directly with several affiliate platforms that provide complete affiliate systems you can use to award commissions to your affiliate marketers.
 
-[Checkout AffiliateWP](https://affiliatewp.com?utm_source=edd_readme&utm_medium=faq_tab&utm_content=home&utm_campaign=readme)
+[Check out AffiliateWP](https://affiliatewp.com?utm_source=edd_readme&utm_medium=faq_tab&utm_content=home&utm_campaign=readme)
 
 = Can I give my customers downloadable PDF Invoices? =
 Yes, EDD has an extension that allows for downloadable invoices to be generated for each payment.
 
 [PDF Invoices](https://easydigitaldownloads.com/downloads/pdf-invoices/?utm_source=pdf-invoices&utm_medium=faq_tab&utm_content=pdf-invoices&utm_campaign=readme)
 
+= Are recurring payments supported? =
+
+Yes, through the use of our commercial addon called [Recurring Payments](https://easydigitaldownloads.com/downloads/recurring-payments/?utm_source=docs&utm_medium=faq_tab&utm_term=recurring_addon&utm_content=faqs&utm_campaign=readme).  [Full documentation here](http://docs.easydigitaldownloads.com/article/346-recurring-payments-setup-documentation?utm_source=docs&utm_medium=faq_tab&utm_term=recurring_addon&utm_content=faqs&utm_campaign=readme)
+
 = Can Users Purchase Products without Using PayPal? =
 
-Yes, through the addition of one or more of the add-on payment gateways, you can accept payments in many different ways. The add-on gateways currently available:
+Yes, through the addition of one or more of the add-on payment gateways, you can accept payments in many different ways. Here are some of the gateways currently found on our [complete list](https://easydigitaldownloads.com/downloads/category/extensions/gateways/?utm_source=docs&utm_medium=faq_tab&utm_term=gateways&utm_content=faqs&utm_campaign=readme):
 
 * [Stripe](https://easydigitaldownloads.com/downloads/stripe-payment-gateway/?utm_source=gateway&utm_medium=faq_tab&utm_content=stripe-payment-gateway&utm_campaign=readme)
 * [Recurly](https://easydigitaldownloads.com/downloads/recurly-com-checkout/?utm_source=gateway&utm_medium=faq_tab&utm_content=recurly-com-checkout&utm_campaign=readme)
@@ -190,6 +186,545 @@ Yes, through the addition of one or more of the add-on payment gateways, you can
 9. Checkout screen
 
 == Changelog ==
+
+= 2.6.13, November 21, 2016 =
+* Fix: Custom payment meta items were not being saved correctly.
+
+= 2.6.12, November 17, 2016 =
+* New: Added new hooks to the profile editor form.
+* Fix: edd_has_active_discounts could return false when there were active discounts.
+* Fix: Supplying an invalid date range on reports could produce an incorrect graph.
+* Fix: EDD_Payment::update_meta could produce a PHP warning when used.
+* Fix: Variable Pricing options were inconsistently being shown and hidden when toggled.
+* Fix: Today/Yesterday Reports miscalculated hours to include the first hour of the next day.
+* Fix: When single day ranges were used on Payments list table, order status counts were not loading.
+* Fix: EDD HTML Select input had many cases where mixed variable types could trigger errors and warnings.
+* Fix: edd_get_users_purchases had outdated PHPDocs.
+* Fix: Determining the 'main' subsection of settings could fire hooks twice and had poor performance.
+* Fix: When changing report years, the report data could have been incorrect.
+* Fix: Payment counts were incorrect on the Payments list table when custom dates were used.
+* Fix: Certain hosting configurations caused the usage tracking notice to be improperly escaped.
+* Fix: Admin scripts were not requiring `jquery-form`.
+* Fix: Download limit setting isn't checked for existence before accessing it when saving a Download.
+* Fix: Timezone wasn't respected when setting up daily cron.
+* Fix: Upgrade routines could calculate incorrect number of total steps.
+* Fix: The notice about being in test mode was not linked to the correct settings page.
+* Fix: `edd_get_users_purchased_products` would fail if the first product ID supplied was not a download.
+* Fix: Checkout could require a state even if the country had no states associated with it.
+* Fix: Creating a discount would not save the product requirements and exclusions on first save.
+* Fix: PHP Warning was being caused by the new beta setting in the extension updater.
+* Fix: The EDD_SL_Plugin_Updater::check_update method could possibly be called twice.
+* Fix: Sanitized unescaped URLs with esc_url
+
+= 2.6.11, November 8, 2016 =
+* New: WP CLI: Customers command now allows searching by user_id.
+* New: Add framework for the new Software Licensing beta support.
+* New: EDD Settings API now supports adding classes to registered settings.
+* New: Improve PayPal Standard IPN lookup logic.
+* New: Support iOS app one-click configuration.
+* New: Add hook after cart quantities are updated.
+* New: Add tooltip to "Display during checkout" tax option.
+* New: Allow exporting the file download history of a specific product.
+* New: Add action after discount is added to the cart.
+* New: Add action hook called "edd_payment_saved" for when EDD_Payment::save() is run.
+* New: Add "author" paramater support to [downloads] shortcode with support for username or ID.
+* Tweak: Correct branding of necessary assets.
+* Tweak: Block self-pings in tracking check-ins.
+* Tweak: Update author and author URI to Easy Digital Downloads.
+* Tweak: Update the Insert Download media button icon to use Dashicons.
+* Tweak: Allow download admin icon to be more easily customized.
+* Tweak: Exported CSVs show "Complete" status as "publish".
+* Fix: Corrected translation for login shortcode redirect description.
+* Fix: Improved the caching of stats transients for better performance.
+* Fix: API Keys were not able to be copied from user profile.
+* Fix: Corrected link to the iOS application.
+* Fix: Use new iPhone icon.
+* Fix: EDD_Payment::setup_tax did not always contain proper data.
+* Fix: Styles on Recount/Reset tool were lost.
+* Fix: CSV import tool were not importing Download Files in some circumstances.
+* Fix: Tooltip styles had a conflict with Gravity Forms.
+* Fix: Recount earning/sales tool for all downloads was failing to properly recount.
+* Fix: Multiple instances of cart widget was causing conflicts when adding or removing items.
+* Fix: API Key list table was unreadable on mobile.
+* Fix: Custom icons via edd_accepted_payment_icons were unwrapped.
+* Fix: Fees for specific download and price IDs did not check if the item or price ID is in the cart.
+* Fix: EDD API was always returning version 1 by default.
+* Fix: Changed uses of jQuery .toggle() to use .show() and .hide() to fix bad checkbox states.
+* Fix: Corrected translation for 'State / Province'.
+* Fix: Corrected a variable type issue in the HTML_Elements::select defaults.
+
+= 2.6.10, October 21, 2016 =
+* Fix: JavaScript error when removing a product from a payment that does not contain a fee.
+
+= 2.6.9, October 20, 2016 =
+* Fix: Negative fees associated with cart item do not affect cart item earnings.
+* Fix: Z-index of tooltips needs to be increased.
+* Fix: Products endpoint returns empty response on v2 of the API.
+* Fix: Email property set twice in edd_insert_payment().
+* Fix: "Email already in use" error if capitalization does not match.
+* Fix: Chosen dropdowns cause a horizontal scroll bug in RTL.
+* Fix: record_fees() clears fees in the session before purchases are completed.
+* Fix: New user email strips login link on plain text email.
+* Fix: Country and state chosen fields on view order details broken.
+* Fix: Billing address fields are not saving in the payment details page when edited.
+* Fix: Not all settings and data removed when uninstall is run.
+* Fix: Don't output a label if one isn't set for text and select HTML elements.
+* Fix: Date in payment_meta should match the payment date when modified.
+* Fix: The edd_get_random_download() should return an item.
+* Fix: Potential PHP warning when using EDD_Payment->save().
+* Fix: Payment date is not included in the payment history export.
+* New: API sales endpoints now include both user_id and customer_id.
+* New: Add user_dropdown to HTML elements that support chosen.
+* New: Add support for product variations in the HTML elements product_dropdown.
+* Tweak: Change "Disable Guest Checkout" to "Require Login".
+* Tweak: Typo "assocaited" in error messages when adding emails to a customer.
+* Tweak: Resend Receipt button allows selecting which associated customer email address to send receipt to.
+
+= 2.6.8, September 26, 2016 =
+* Fix: Category earnings report does not recover when the site has no download categories.
+* Fix: PHP notice caused by localized script loader.
+* Fix: CSV Product exporter/importer does not honor file conditions for variable pricing.
+* Fix: CSV importer improperly started variable pricing IDs as 0 instead of 1.
+* Fix: Repeatable rows not properly adding data-key attribute for variable price select boxes.
+* Fix: Undefined index warning when adding download details widget within the customizer.
+* Fix: edd_update_payment_status() creates new blank payment record if given an invalid payment ID.
+* Fix: REST API Products endpoint doesn't take into account search parameter API.
+* Tweak: Correct typo in country list for Philippines.
+* Tweak: Upload file text is misaligned within the input field.
+
+= 2.6.7, September 14, 2016 =
+* Fix: Improved CSV file type detection to avoid 'invalid CSV' error.
+* Fix: The edd_payment_meta filter was not respecting values modified during the filter when saving a payment.
+* Fix: Redirect to Checkout setting was not keeping custom query string variables when direct cart URLs.
+* Fix: Cart Widget did not properly refresh the page when purchase links were present on the page.
+* Fix: Categories/Tags not created and assigned during product import.
+* Fix: Remove discount cron which could cause discount codes incorrectly changing to inactive without warning.
+* Fix: Can't Uncheck All Checkboxes in Multi-Check.
+* Fix: Verify discount is in array before unsetting the discount.
+* Fix: edd_stats_{key} transients causing performance issues.
+* Fix: Undefined Indexes when assigning new user ID to customer details.
+* Fix: Purchase Email Subject ampersands getting improperly HTML encoded.
+* Fix: Local files not being properly found when on a Windows server.
+* Fix: Properly catch default case for license activation callback.
+* Fix: Sequential payment number not assigned when creating payments with EDD_Payment.
+* Fix: Tax calculation should only run on values greater than 0.
+* Fix: Fix variable name in customer recount tool for post status array.
+* Fix: Discount functions not always having user_info array key.
+* Tweak: Rename Download List Table Taxonomy Headers.
+* Tweak: Fix horizontal alignment of items in the dashboard widget.
+* Tweak: Update codex link in readme.txt.
+* Tweak: Update EDD_SL_Plugin_Updater.php to latest version.
+* Tweak: Correct references of 'short code' to 'shortcode'.
+* Tweak: Filter "edd_get_cart_discounts_html" does not pass relevant arguments for developers.
+* Tweak: Update payments export to use EDD_Payment.
+* Tweak: Return null for all empty data returned from the API instead of an empty array.
+* Tweak: Update readme.txt with new donate link.
+* Tweak: Allow custom Arguments for Settings API Callbacks.
+* New: Accepted payment method icons have been updated to PNGs with transparent backgrounds.
+* New: Update MasterCard Logo.
+* New: Add filters to API endpoints.
+* New: Added actions to the adding and removing of fees.
+* New: Buy Now button option on Add/Edit Download now always shows, but is disabled when requirements are not.
+* New: Customer address can now be edited for customers who do not previously have an address on file.
+* New: Add edd_get_php_arg_separator_output on System Info.
+* New: Linking a Customer to a WordPress user now allows login or email address as a valid input.
+
+= 2.6.6, August 1, 2016 =
+* Fix: Discount codes being marked as inactive
+* Fix: Incorrect state/province used in tax calculations in certain scenarios
+* Fix: Incorrect placeholder for Select Customer drop down
+* Fix: Incorrect redirect URL for [edd_login] shortcode
+* Fix: Spelling errors in internal documentation
+* New: Added $items parameter to edd_post_add_to_cart action
+
+= 2.6.5, July 25, 2016 =
+* Fix: Incorrect parameters passed to edd_is_checkout()
+* Fix: Some records skipped during CSV import
+* Fix: update_option() cannot be used to update EDD settings
+* Fix: Incorrect date format used in CSV payment import
+* Fix: Product-specific sales / earnings graphs show no earnings
+* Fix: Spelling errors in PHPDocs
+* Fix: Resend Receipt box visible even when payment is not Complete
+* Fix: File URLs split on / during product import
+* Fix: Setting display:none on variable price options breaks add to cart processing
+* Fix: Prices can be set as negative
+* Fix: edd_get_variable_prices() returns prices even when variable prices are disabled
+* Tweak: Added filters to payment gateway labels on checkout screen
+* Tweak: Modified how metadata is registered in anticipation of WordPress 4.6
+* Tweak: Changed role required for deleting payment records to delete_shop_payments
+* New: Added Remember Me option to log in form
+* New: Added /info/ endpoint to REST API
+
+= 2.6.4, July 6, 2016 =
+* Fix: Negative fees getting included twice with PayPal Standard
+* Fix: Non-standard status in the product import caused silent failure.
+* Fix: Rely on Customer's User ID when EDD_Payment::setup_user_id has incorrect data.
+* Fix: Date strings are not properly parsed in product import.
+* Fix: PHP notice is triggered when using purchase_link shortcode with an invalid SKU attribute.
+* Fix: PHP warning when activating on Multisite due to roles not being correcly instantiated.
+* Fix: It is possible for edd_get_ip() to return a CSV of IP addresses.
+* Fix: Products deleted after being added to the cart creates invalid cart data.
+
+= 2.6.3, June 30, 2016 =
+
+* Fix: Product name needs to be trimmed during payment import to prevent duplicate products being created
+* Fix: Discount codes getting erroneously marked as Inactive
+* Fix: Importing settings causes a fatal error
+* Fix: Address Line 2 erroneously marked as required in some cases
+* Tweak: Improved inline documentation for edd_get_download_file_url()
+* Tweak: Add-on updater updated to 1.6.4
+
+= 2.6.2, June 28, 2016 =
+* Fix: Existing guest customers cannot register a user account on checkout using the email address associated with their existing customer profile.
+* Fix: DocBloc for edd_delete_option function is incorrect.
+
+= 2.6.1, June 24, 2016 =
+* Fix: PayPal Standard transaction ID links don't link to PayPal Sandbox when payment was made in test mode.
+* Fix: Opt-in tracking not sending after initial activation.
+* Tweak: Welcome page not showing on upgrade.
+* Tweak: Only show welcome page on major versions.
+* New: If enabled, send checkin data when Easy Digital Downloads is upgraded.
+* New: Add a filter for edd_price_options() that allows adding classes to the output.
+
+= 2.6, June 23, 2016 =
+* New: Added filters to process the earnings as they are updated.
+* New: Profile Editor state field shows as dropdown when possible.
+* New: Public API query mode to allow extension developers the ability to create API endpoints that do not require API keys.
+* New: Add/Improve inline help throughout the plugin with UI Tooltip.
+* New: Purchased Products column in payment export improved for better parsing.
+* New: Filters added to EDD_Customer increase and decrease methods.
+* New: Introduce Version 2 (v2) of the REST API.
+* New: (API v2) Products endpoint supports category and tag filtering.
+* New: (API v2) Customers endpoint supports filtering customers by creation date.
+* New: (API v2) Support searching products.
+* New: (API v2) Improve discount code reporting.
+* New: Add price(s) to oEmbed output for downloads.
+* New: Remove comment/trackback counts from oEmbed output for downloads.
+* New: Add new edd-table class to all tables outputted by Easy Digital Downloads.
+* New: Improve discount code status updates by setting inactive when usage reaches max.
+* New: Add daily cron to mark expired and discount codes at max usage as expired or inactive.
+* New: Add get_payments() method to the EDD_Customer class.
+* New: Make download ID more visible on the downloads list table.
+* New: Add filters to the add_fee() and get_fees() methods of EDD_Fees class.
+* New: Add price_id support for the Fees API.
+* New: PayPal Standard payments are now able to be refunded within the WordPress admin.
+* New: Deprecate edd_get_success_page_url().
+* New: Add default redirect option to [edd_login] and [edd_register] shortcodes.
+* New: Introduce customer meta table.
+* New: Add JavaScript trigger to edd_load_gateway() for 3rd party hooks.
+* New: Support post__in as an argument in [downloads] shortcode.
+* New: Final declaration removed from EDD_Payment class.
+* New: Allow edd_get_payment_status to also accept a payment ID.
+* New: Support additional email addresses for customers.
+* New: Add actions into the increase/decrease sales/earnings methods of the EDD_Download class.
+* New: Added CSV Import functionality.
+* Tweak: Use internal methods when getting sales counts and files in EDD_Download class.
+* Tweak: Add campaign tracking to links in the contextual help menus.
+* Tweak: Improve edd-admin.css coding standards.
+* Tweak: Update translation .mo files and add development tool for downloading translations from Language Packs.
+* Tweak: Improve EDD Licenses tab in settings.
+* Tweak: Improve edd_object_to_array method.
+* Tweak: Improve mobile breakpoints for customer details view.
+* Tweak: Remove pagination when [download] shortcode uses 'random' for the sort.
+* Tweak: Use existing function to build {receipt_link} email tag.
+* Tweak: PayPal Standard Buy Now was updated to use EDD_Payment.
+* Fix: New User Email alerts have incorrect header.
+* Fix: Transient being bypassed in EDD_Payment_Stats::get_earnings().
+* Fix: Remove unused variable and duplicate post_where filters in EDD_Payment_Stats.
+* Fix: Correct spelling error in edd_get_paypal_redirect().
+* Fix: Improved cache key generation in EDD_Payment_Stats::get_earnings().
+* Fix: Remove deprecated constructor method in System Info browser class.
+* Fix: Negative cart fees should not have tax charged on them.
+* Fix: Roles are being initialized on every admin request.
+* Fix: Negative item fees did not alter the taxation on the item.
+* Fix: System info shows Must-Use plugins when none are present.
+* Fix: Cart position (key) is not passed to the hooks in the cart.
+* Fix: Product dropdown search never shows the current download in results.
+* Fix: Trim response from country state lookup.
+* Fix: Update subscribe link in Welcome screen.
+* Fix: edd_get_users_purchased_products() can sometimes try an array_mege on a non-array value.
+* Fix: PayPal IPN Verification forced to HTTPS.
+* Fix: Incorrect earnings across a custom date range report.
+* Fix: Flat rate discounts can apply an amount larger than the cart total.
+* Fix: Improve performance of transient deletion when uninstalling Easy Digital Downloads.
+* Fix: Sales logs show incorrect item amounts with variable pricing sales.
+* Fix: (a11y) Customer details page icons are not focused.
+* Fix: (a11y) Removed title attributes.
+* Fix: (a11y) Focus is lost when removing price option.
+* Fix: (a11y) Make Add New Price a button when working with variable pricing.
+* Fix: (a11y) Repeatable field link to remove row should be a button.
+* Fix: Creating a payment sometimes doesn't save the correct user_id or customer_id.
+* Fix: Remove old WordPress version compatibility checks for WordPress versions less than 4.0.
+* Fix: Preview emails use default gateway.
+* Fix: EDD_API hooks for API key generation fire when extending the base class.
+* Fix: Remove incorrect messaging on profile editor related to password changes.
+* Fix: HTML validation fails if schema.org itemtype is missing.
+* Fix: Clicking 'Complete Purchase' button multiple times can result in Empty Cart error.
+* Fix: Replace calls to global settings variable with edd_get_option().
+* Fix: Duplicate get_post_meta calls in EDD_Download class.
+* Fix: Amazon Payments address field not showing with AJAX disabled.
+* Fix: Reporting is incorrect when changing predefined dates where year_end changes.
+* Fix: Allow no gateway to be enabled when purchase is free.
+* Fix: Item fees not taken into account when using EDD_Payment_Stats::get_earnings() for a specific download.
+* Fix: Subtotal and Total data attributes using incorrect amounts.
+* Fix: Taxonomies with numeric slugs are assumed to be the term_id in [downloads] shortcode.
+* Fix: Multiple instances of variable pricing output for a single product causes label target issue.
+* Fix: Correct schema.org structured data for items with variable pricing.
+* Fix: Correct HTML validation for the legend tag on forms by removing span wrappers.
+* Fix: Schema.org markup missing priceCurrency attribute.
+* Fix: Use tel input type and patterns to force numeric keyboard on checkout for card number and CVC inputs.
+* Fix: Settings sanitization for subsections unsets tax rates when a subsection is registered under taxes.
+
+= 2.5.17, June 3, 2016 =
+
+* Fix: Discount codes are not always sent when opt-in tracking is enabled
+* Fix: Correct a capitilzation error in EDD_Customer class usage during edd_insert_payment
+* Fix: Correct error in the System Info browser detection
+
+= 2.5.16, May 18, 2016 =
+
+* Fix: Checkboxes cannot be unchecked in the settings screens of some extensions if only one extension is activated
+
+= 2.5.15, May 11, 2016 =
+
+* Fix: Removed unused variables and typos in unit tests
+* Fix: Non-standardized display of file names for items in bundles on receipts
+* Fix: Downloads not always removed from payment records when removed from the View Order Details screen
+* Tweak: Introduced new edd_checkout_user_error_checks action during purchase processing
+* Tweak: Placeholders on product dropdowns improved to help indicate searchability
+
+= 2.5.14, May 5, 2016 =
+
+* Fix: New user emails do not have the proper heading
+* Fix: Opt-in tracking not always sending when allowed
+* Tweak: Added Locale to opt-in tracking
+
+= 2.5.13, April 21, 2016 =
+
+* Fix: User info data not properly populated from customer record when missing in payment meta
+* Fix: filesize() run on external files during download process
+* Tweak: Changed log in form label to include email address
+* Tweak: Added PHP version, EDD version, install date, and WordPress version to opt-in tracking payload
+
+= 2.5.12, April 14, 2016 =
+
+* Fix: Removed incorrect title attribute from Send Test Email button
+* Fix: Made add to cart AJAX action Accessible
+* Tweak: Added Delete Payment option to View Order Details screen
+* Tweak: Moved Resend Receipt button to separate box on View Order Details screen
+
+= 2.5.11, April 7, 2016 =
+
+* Fix: Non-complete payments permitting file downloads
+* Fix: Double POST requests for plugin update checks
+* Fix: Missing validation for discount code ID in edd_decrease_discount_usage()
+* Fix: Default view of Sales / Earnings graphs for individual products not working
+* Fix: Download Details widget will not save "Current" display option
+* Fix: Sessions should never start on RSS feeds
+* Fix: Missing screen reader text for Default Price Option radio buttons
+* Fix: Incorrect heading size for some admin screens
+* Fix: Payment History Search results now stay after performing actions on shown payments
+* Tweak: Added new filters to recount stats tool for customers to allow support for other payment statuses
+* Tweak: Added new filters to allow URIs to be added to the session blacklist to prevent sessions from starting on those URIs
+* Tweak: Added filter to permit disabling wpautop() in emails
+* Tweak: Set "filter_items_list", "items_list_navigation", and "items_list" labels for Download post type
+* Tweak: Added new "edd_payment_advanced_filters_row" filter
+
+= 2.5.10, March 24, 2016 =
+
+* Fix: Fatal PHP error when adding multiple price IDs to the card when same item is already in cart
+* Fix: New user registration notification email does not support HTML
+* Fix: {receipt_link} HTML stripped from plain text emails
+* Fix: fees_total property not set up in EDD_Payment object
+* Fix: Payment History not properly setting end date filter
+* Fix: filesize() being run on external files during file download
+* Fix: Symlinked file downloads result in 0 byte files
+* Fix: 100% discount codes with taxes enabled fail to allow purchase
+* Fix: Extraneous hyphen after product name for products without price options
+* Fix: Payments cannot be searched by user ID
+* Fix: Undefined index "download_method"
+* Fix: Ajax Download search excludes bundles improperly
+* Fix: Custom date range over multiple years does not work well in earnings reports
+* Fix: HTTP/HTTPS protocol stored on file URLs in database, resulting in failed downloads if site protocol changes
+* Fix: Extensions settings tab displays empty Main section in some cases
+* Fix: "No checkout page has been configured" notice cannot be dismissed properly
+* Fix: EDD transients not deleted during uninstall
+* Fix: Sales logs not deleted when payment is changed from Complete to Pending
+* Fix: Inconsistent formatting in Dashboard stats widget
+* Fix: About and Welcome pages not compatible with Admin Menu Editor plugin
+* Fix: State / Province field not populating saved country / state / province when shown as text field
+* Fix: discount_dropdown() method of EDD_HTML_Elements does not support non-item label
+* Fix: widgets.php page dies if site has large number of products
+* Fix: Form to create new API key not shown
+* Tweak: Re-adding support for retrieving card item price without tax
+
+= 2.5.9, February 18, 2016 =
+
+* Fix: Settings cannot be saved
+
+= 2.5.8, February 18, 2016 =
+
+* Fix: Transaction ID detection not working properly for old payment records that stored transaction ID in notes
+* Fix: 100% discount codes not properly removing billing fields when decimal separator is not a period
+* Fix: [edd_receipt payment_key="false"] results in error retrieving receipt message
+* Fix: Unused variable in Javascript
+* Fix: File downloads failing with Force download method on nginx
+* Fix: Undefined variable $file_path during file downloads on some servers
+* Fix: Incorrect inline PHP documentation
+* Fix: Settings with some non-alphanumeric keys not saved properly
+* Fix: Price override in add_download() method of EDD_Payment does not respect price of 0
+* Fix: Dash incorrectly shown after product name on the receipt page
+* Fix: Missing P tag on View Order Details screen
+* Tweak: Replace usage of $edd_options with edd_get_option() helper function
+* Tweak: URL in New User Notification email now linked
+* Tweak: edd_price() now displays the value of the Default price option
+* New: Introduced edd_payment_currency_default filter
+
+= 2.5.7, February 10, 2016 =
+
+* New: Added refund() method to EDD_Payment class
+* New: Added filters to enable/disable product and customer stat adjustments during refunds
+* New: Addded new hooks to EDD_Payment class that run before payment is setup
+* Tweak: Improved taxonomy labels for categories and tags
+* Tweak: Automatically flush permalinks when a 404 is detected on EDD archive pages
+* Tweak: Add proper 403 headers to REST API
+* Tweak: Removed usage of soon-to-be-deprecated function get_currentuserinfo()
+* Tweak: Improved CSS formatting for edd.css
+* Tweak: Improved label/field HTML markup on checkout
+* Fix: Store earnings reports can cause memory problems when store has only 0.00 sales
+* Fix: Incorrect query arguments when redirecting back to checkout with ?payment-mode if query args are already present
+* Fix: Maybe unserialize user_info array in EDD_Payment
+* Fix: Recalculate Totals button ignores item quantities
+* Fix: Incorrect item price stored in sales log when adding item to existing payment
+* Fix: .jpeg files blocked by .htaccess file
+* Fix: Product search on customer export returns customer names instead of products
+* Fix: Editing items on payment do not save properly in some instances
+* Fix: File download links fail with qTranslate-X plugin active
+* Fix: Admin notice about expired and invalid keys should show only to site admins
+* Fix: Cart widget cannot be shown on checkout screen
+* Fix: Incorrect date format when viewing Last Week report
+* Fix: PHP notice when sending test payment receipt
+* Fix: edit_date not passed in when updating payment record
+* Fix: Unneeded product query on discount add/edit screen
+* Fix: Profile editor does not update customer name
+* Fix: Price not formatted in placeholder for price field
+* Fix: Unnecessary paragraph tags inside of form elements on Export screen
+* Fix: Payments list filters are off by one day
+* Fix: File download links break if UTM variables are added to them
+* Fix: pagination=false parameter in [downloads] shortcode does not work
+* Fix: Coupon code use count not decremented when payment marked as failed
+* Fix: Username field not validated before submitting form to generate new API key
+* Fix: Download Details widget requires settings to be saved before it displays
+
+= 2.5.6, January 13, 2016 =
+
+* Fix: Payment dates recorded with incorrect dates depending on the timezone selected in settings
+* Fix: Download links missing from purchase receipts for some sites
+
+= 2.5.5, January 12, 2016 =
+
+* Fix: Timezones still not set properly for some sites. This resulted in download links missing from purchase receipts.
+
+= 2.5.4, January 12, 2016 =
+
+* Fix: Timezones set improperly sometimes when payments are created
+* Fix: PHP notices in edd_process_add_to_cart() when AJAX is disabled
+* Fix: PHP warning in Recount Single Customer Stats tool
+* Fix: Payment date cannot be changed in the admin
+* Fix: Currency code not properly returned if payment is missing currency metadata
+* Fix: "Sorry trouble retrieving payment receipt" error shown occasionally
+* Fix: Sanitization process for settings breaks some extension's settings
+* Fix: Download links blank for some customers
+* Fix: Prevent default placeholder from showing as an option in multi-select fields
+
+= 2.5.3, January 9, 2016 =
+
+* Fix: Status passed to edd_insert_payment() not respected. Caused subscription payments to be marked as pending
+* Fix: edd_is_payment_complete() returns false improperly
+* Fix: Buy Now links going to empty checkout screen when customer is not logged in
+* Tweak: Removed redundant Max Uses column on Discounts screen
+
+= 2.5.2, January 8, 2016 =
+
+* Fix: Item specific fees applying twice
+
+= 2.5.1, January 7, 2016 =
+
+* Fix: Infinite loop in some instances where add_filter() is used by extensions
+* Fix: Deactivate License button missing on valid license keys
+* Fix: Payments not properly attached to customer records if last name is not supplied during checkout while logged out
+* Fix: Item amounts not saving properly when adding new Download to payment record
+* Fix: PHP warning on explode() due to empty customer notes field
+
+= 2.5, January 7, 2016 =
+
+* New: Improved settings organization with subsections
+* New: Product export to CSV tool
+* New: Recount stats tool
+* New: EDD_Payment class for developers
+* New: Credit card fields now include HTML5 attributes
+* New: Improved license key fields for extensions
+* New: Discount codes can now be sorted
+* New: 0.00 value sales can now be excluded from sales graphs
+* New: File download history now available in REST API at /edd-api/file-download-logs
+* New: Quantities now included in payment history export
+* New: Payment History can be searched by discount code
+* New: File Downloads on products can now be re-ordered with drag-and-drop
+* New: Added filter to disable "edd_items_in_cart" cookie
+* Tweak: Improved customer options in purchase history export
+* Tweak: All meta keys now registered with WordPress
+* Tweak: EDD_API now runs on wp hook for improved performance
+* Tweak: Show item price instead of sale price in sales log
+* Tweak: Post type labels now used for Featured Image labels
+* Tweak: Inline styles have been removed from [downloads] shortcode
+* Tweak: Improved labels for checkbox options in Emails settings tab
+* Tweak: Improved SSL detection
+* Tweak: Improved abstraction of Customer UI so it can be re-used
+* Tweak: edd_get_cart_contents() standardized
+* Tweak: Set minimum WordPress version to 4.0
+* Tweak: Customer name on Payment History now goes to Customer details screen
+* Tweak: Properties in EDD_Amazon class are now public
+* Fix: Bulk actions not shown when list tables have no items
+* Fix: Fatal error in earnings by category reports
+* Fix: edd_maybe_remove_menu_profile_links() breaks some AJAX actions
+* Fix: PHP notices in PayPal if cart_details is not an array
+* Fix: "This Week" reports fail when crossing a month or year boundary
+* Fix: Deleting non-complete payment updates customer stats
+* Fix: inline-edit-post loaded when it shouldn't be
+* Fix: PayPal IPN listener using deprecated mc_gross key
+* Fix: PayPal listener not properly decoding data keys in some server environments
+* Fix: Downloads cannot be sorted in DESC order
+* Fix: User verification URL missing from email when plain text template is used
+* Fix: Incorrectly spelled UTM tags in Add Ons page
+* Fix: CSS for Welcome Page affects other pages
+* Fix: Properly run install routine when network activating EDD
+* Fix: Remove use of WP_CONTENT_URL constant
+* Fix: North/South Korea country codes reversed
+* Fix: WordPress 4.4 tab styles fix
+* Fix: Extension updates do not display if license key is not entered
+* Fix: Undefined variable $payment_id when seding test email
+* Fix: Cart widgets break add to cart button
+* Fix: edd_render_receipt_in_browser() outputs invalid markup
+* Fix: Parameters for [edd_receipt] shortcode not working properly
+* Fix: Payment Method fields not hidden when 100% discount code is applied
+* Fix: Running EDD_Payment_Stats::get_earnings() twice gives inconsistent values
+* Fix: Running EDD_Payment_Stats::get_sales() twice gives inconsistent values
+* Fix: AJAX call to load dashboard sales widget fires on all admin pages
+* Fix: Quantity not added with variable prices and multi-purchase mode when AJAX is disabled
+* Fix: user_id field not removed when customer's user account is deleted
+* Fix: Symlink File Download option not functioning
+* Fix: Order of bundled products not kept when saving Download product
+* Fix: Ugly display of long transaction IDs in View Order Details
+* Fix: File download links break when language parameter from qTranslate and WPML are present
+* Fix: Excluded products improperly count towards minimum purchase total of discount codes
+* Fix: Incorrect dates displayed when using custom date ranges in earnings reports
+* Fix: Subtotal should be removed from checkout when prices are inclusive of tax
+* Fix: price="0" fails when price_id="x" is used in [purchase_link] shortcode
+* Fix: Pagination fails when searching Payment History by download ID
+
+= 2.4.10, December 12, 2015 =
+
+* Fix: Security vulnerability related to session IDs
 
 = 2.4.9, October 14, 2015 =
 
@@ -323,7 +858,7 @@ Yes, through the addition of one or more of the add-on payment gateways, you can
 * New: Added filters for the From Address for admin sale notifications
 * Tweak: Improved performance of user validation in the REST API
 * Tweak: Improved edd_is_admin_page() helper function for detecting when on specific EDD admin pages
-* Tweak: Stylesheets are now registered before enqueueed
+* Tweak: Stylesheets are now registered before enqueued
 * Tweak: Moved Test Mode option to the Payment Gateways tab
 * Tweak: Earnings and sales states now incremented while in Test Mode
 * Tweak: Download Details widget now properly respects taxonomy labels
@@ -404,7 +939,7 @@ Yes, through the addition of one or more of the add-on payment gateways, you can
 * Fix: Mixed-content notice on the checkout page for sites with SSL
 * Fix: Incorrect price ID gets added to the cart when multiple purchase buttons are placed on the same page with the price_id parameter
 * Fix: Removed Yugoslavia from the country list since it is not a country anymore
-* Fix: Quantity field not shown on purchase buttons with the [purchase_link] short code
+* Fix: Quantity field not shown on purchase buttons with the [purchase_link] shortcode
 * Tweak: Automatically disable buy now buttons when taxes are enabled since they do not support taxes
 * Tweak: Automatically disable the edd_test_ajax_works() test if the Airplane Mode plugin is enabled
 * Tweak: Updated translation files for many languages
@@ -475,7 +1010,7 @@ Yes, through the addition of one or more of the add-on payment gateways, you can
 * Fix: Discount codes are validated improperly when the product requirements are not meant
 * Fix: CVC field allows more than 4 digits
 * Fix: In-browser receipt page is a mess on Twenty Fifteeen theme
-* Fix: exclude_categories and exclude_tags parameters not working properly in [downloads] short code
+* Fix: exclude_categories and exclude_tags parameters not working properly in [downloads] shortcode
 * Fix: Cross-domain download files get corrupted on NGINX servers
 * Fix: Instantiating EDD_Payment_Stats without a date triggers an error
 * Fix: File size not displayed when download files
@@ -519,7 +1054,7 @@ Yes, through the addition of one or more of the add-on payment gateways, you can
 
 * New: Introduced edd_global_checkout_script_vars and edd_ajax_script_vars filters for localized javascript variables
 * Bug: Strict PHP Standards notice in EDD_Gateway_Error_Log class
-* Bug: Category parameter behaves incorrectly for the [downloads] short code
+* Bug: Category parameter behaves incorrectly for the [downloads] shortcode
 * Bug: Select a Download placeholder on add discount screen saves improperly
 * Bug: EDD_Session leaks across sites in multisite installs
 * Bug: Incorrect spelling of Indian state names
@@ -539,7 +1074,7 @@ Yes, through the addition of one or more of the add-on payment gateways, you can
 * Bug: GMT date / time not properly set in date is specified when creating a payment record
 * Bug: Items purchased with quantities show incorrectly in sales log table
 * Bug: [downloads] pagination not working with default permalinks
-* Bug: AND relation acting as an OR relation in [downloads] short code
+* Bug: AND relation acting as an OR relation in [downloads] shortcode
 * Bug: Cart widget items incorrect with variable prices
 * Bug: Custom date range reports do not work when crossing year boundaries
 * Bug: Yesterday report fails on January 1
@@ -560,7 +1095,7 @@ Yes, through the addition of one or more of the add-on payment gateways, you can
 * Fix: Extension updates running on every page load of plugins.php when using multisite
 * Fix: edd_test_ajax_works() request firing on every page load
 * Fix: Incorrect price ID added to the cart when two purchase buttons are on the same page
-* Fix: Fatal error when using price_id in the purchase_link short code
+* Fix: Fatal error when using price_id in the purchase_link shortcode
 * Fix: Shopping cart squished in the Twenty Fifteen theme
 * Fix: Removed unused variables in edd_get_register_fields()
 * Fix: Incorrect quantity field displayed when a variable priced item with multi-purchase mode enabled is in the vart
@@ -580,8 +1115,8 @@ Yes, through the addition of one or more of the add-on payment gateways, you can
 
 * New: Transaction IDs can now be linked to the transaction details page in the payment processor (per gateway)
 * New: Added a WP CLI command for generating test purchase data
-* New: "price_id" parameter introduced for [purchase_link] short code to allow purchasing a single price option
-* New: Added support for variable prices to the [edd_price] short code
+* New: "price_id" parameter introduced for [purchase_link] shortcode to allow purchasing a single price option
+* New: Added support for variable prices to the [edd_price] shortcode
 * New: EDD_Download class to make interacting with Download products easier for theme and extension developers
 * New: edd_cart_item_tax_description filter
 * New: Purchase buttons can now display a quantity field
@@ -674,7 +1209,7 @@ Yes, through the addition of one or more of the add-on payment gateways, you can
 = 2.1.4, September 22, 2014 =
 
 * Fix: New sale notification emails not sending for some users
-* Fix: direct="true" not working in the [purchase_link] short code
+* Fix: direct="true" not working in the [purchase_link] shortcode
 * Fix: User meta for saved carts not properly cleaned out after a cart is restored
 * Fix: SQL errors related to WP Session garbage collection
 * Fix: API Request logs table showing log entries from other log types
@@ -725,7 +1260,7 @@ Yes, through the addition of one or more of the add-on payment gateways, you can
 * New: Introduced edd_get_payment_transaction_id() and edd_set_payment_transaction_id()
 * New: Introduced edd_user_can_view_receipt_item filter
 
-* Tweak: [downloads] short code now accepts slugs or term IDs for category and tag attributes
+* Tweak: [downloads] shortcode now accepts slugs or term IDs for category and tag attributes
 * Tweak: Estimated earnings are more accurate
 * Tweak: Custom date ranges for report graphs now include a day option
 * Tweak: Added EDD-specific classes to the body tag when appropriate
@@ -822,7 +1357,7 @@ Yes, through the addition of one or more of the add-on payment gateways, you can
 = 2.0, June 3, 2014 =
 
 * New: Added support for sequential order numbers
-* New: Added a new [edd_register] short code
+* New: Added a new [edd_register] shortcode
 * New: Added an enforce SSL option
 * New: Added greatly improved discount code validation during checkout
 * New: Added a new API Keys list table in Downloads > Tools
@@ -852,7 +1387,7 @@ Yes, through the addition of one or more of the add-on payment gateways, you can
 * Tweak: Added a link to the File Downloads log from View Order Details
 * Tweak: Added a "was_completed" meta flag for payment records
 * Tweak: Reversed some of the checkbox anti-patterns
-* Tweak: Added support showing all Download products in the [downloads] short code
+* Tweak: Added support showing all Download products in the [downloads] shortcode
 * Tweak: Log the reason a payment is marked as failed from PayPal
 * Tweak: Added a columns variable to the edd_download_class filter
 * Tweak: Added tax settings to the System Info
@@ -932,7 +1467,7 @@ Yes, through the addition of one or more of the add-on payment gateways, you can
 
 * Tweak: Added $payment_id to the edd_email_receipt_download_title filter
 * Tweak: Added a break after the country select field on checkout
-* Tweak: Removed direct call to wp_enqueu_script( 'jquery' ) since it is loaded as a dependency
+* Tweak: Removed direct call to wp_enqueue_script( 'jquery' ) since it is loaded as a dependency
 * Tweak: Improved the Dashboard summary widget layout
 * Tweak: Improve column width of the Downloads table
 * Tweak: Updated language files
@@ -1139,7 +1674,7 @@ _REQUIRES WordPress 3.7 or later_
 * Fix: Selecting the same month for start and end in Report date filters resulted in a 12 month spread
 * Fix: A bug that caused the Yesterday report view to show 0 earnings and sales when the current month is January
 
-* Tweak: Better support for responsive columns in the [downloads] short code
+* Tweak: Better support for responsive columns in the [downloads] shortcode
 * Tweak: Improved the sample product import file
 * Tweak: Better setup EDD_Roles during initial installation
 * Tweak: Improved the checkout_cart.php template file
@@ -1196,7 +1731,7 @@ _REQUIRES WordPress 3.7 or later_
 * Fix: fatal error in payment history column
 * Fix: payment method icons not respecting WP in its own directory
 * Fix: invalid UTF8 sequence in heartbeat API response
-* Fix: illegal offset with user address in profile editor short code
+* Fix: illegal offset with user address in profile editor shortcode
 * Fix: empty paragraph tag after tax rates in tax settings
 * Fix: undefined notices when saving Extensions tab with only one checkbox
 * Fix: double subtotal when two cart widgets are displayed on the same page
@@ -1301,7 +1836,7 @@ _REQUIRES WordPress 3.7 or later_
 * Tweak: added hex values to edd_get_button_colors()
 * Tweak: added form_id attribute to [edd_purchase_link]
 * Tweak: dramatically improved the EDD settings API
-* Tweak: added a column class to the [downloads] short code
+* Tweak: added a column class to the [downloads] shortcode
 * Tweak: added SPAN tags around checkoug LEGEND tags
 * Tweak: automatically update file price conditions when new price options are added
 * Tweak: fire edd_create_protection_files() on install process to ensure .htaccess file is created in uploads/edd directory
@@ -1341,7 +1876,7 @@ _REQUIRES WordPress 3.7 or later_
 * New: Added options to configure the admin purchase notification email
 * New: Added search to customer reports
 * New: Added item quantity support on checkout
-* New: Brought back the [downloads_history] short code
+* New: Brought back the [downloads_history] shortcode
 * New: Added the ability to use multiple discounts per-purchase
 * New: Added filter to disable schema.org microdata
 * New: Better payment method icons, including full retina support
@@ -1386,8 +1921,8 @@ _REQUIRES WordPress 3.7 or later_
 * Fix: Incorrect usage of edd_log_test_payment_stats filter
 * Fix: Check for existence of country code in zip/postal code regex
 * Fix: Variable pricing didn't follow currency position
-* Fix: Invalid foreach error with [downloads_discounts] short code
-* Fix: [purchase_collection] short code broken
+* Fix: Invalid foreach error with [downloads_discounts] shortcode
+* Fix: [purchase_collection] shortcode broken
 * Fix: Customers not always receiving purchase receipt
 
 
@@ -1478,7 +2013,7 @@ _REQUIRES WordPress 3.7 or later_
 * Fix: Insert Download icon screwed up
 * Fix: Estimated stats incorrect
 * Fix: "upload" field type in settings doesn't use WP 3.5 uploader
-* Fix: Sample import data uses wrong short code
+* Fix: Sample import data uses wrong shortcode
 * Fix: Max product limit in PayPal Standard
 * Fix: Incorrect parameter in shortcode-content-cart-button.php
 * Fix: System Info: Page On Front and Page for Posts have same value
@@ -1488,7 +2023,7 @@ _REQUIRES WordPress 3.7 or later_
 * Fix: WP Super Cache 1.3.1 compatibility
 * Fix: Incorrect URL to iPhone image in Payment History
 * Fix: Editing Downloads in payment doesn't work fully
-* Fix: Purchase History page used wrong short code
+* Fix: Purchase History page used wrong shortcode
 * Fix: Error bulk-deleting payments with some languages
 * Fix: Prices not showing on purchase button
 * Fix: Incorect path and URL constants when wp-content/plugins is symlinked
@@ -1525,7 +2060,7 @@ _REQUIRES WordPress 3.7 or later_
 * New: Added ability to export file download history by date
 * New: Added category filtering to Downloads > Reports > Downloads
 * New: Added option to disable admin sales notices
-* Tweaked: Better options to disable the price in the [purchase_link] short code
+* Tweaked: Better options to disable the price in the [purchase_link] shortcode
 * Tweaked: Improved the checkout error fields
 * Fix: Issue with purchase receipt CSS
 * Fix: SQL error with comments_clauses
@@ -1617,7 +2152,7 @@ _REQUIRES WordPress 3.7 or later_
 * New: Added new EDD_Export class to more flexible export system
 * New: Pages are auto created and saved to the EDD options on activation
 * New: Added excerpt support to download post type
-* New: Added new filter for [downloads] short code HTML
+* New: Added new filter for [downloads] shortcode HTML
 * New: Added dashboard alert to payment history when in Test Mode
 * New: Added dashboard alert if the checkout page is deleted
 * New: Show price range for variable priced products in Downloads list
@@ -1717,7 +2252,7 @@ _REQUIRES WordPress 3.7 or later_
 * Tweak: Changelogs cleaned up (props @chriscct7)
 * Tweak: Spaces in Download File Names May Cause 404
 * Tweak: Remove Bullets from Default Email Template
-* Tweak: Paginate Payment / Download History Short Codes
+* Tweak: Paginate Payment / Download History Shortcodes
 * Tweak: Convert Discount Admin Page to WP List Table
 * Tweak: Moved the new edit profile form into templates folder
 * Tweak: Removed cache_results query arg from sales widget
@@ -1829,13 +2364,13 @@ _REQUIRES WordPress 3.7 or later_
 
 * New: Option for defining the emails that receive admin sale notifications
 * New: edd_item_in_cart filter
-* New: Added prices to the [purchase_link] short code so that the product price is shown on the button
+* New: Added prices to the [purchase_link] shortcode so that the product price is shown on the button
 * New: Added payment history search
-* New: Added exclude_category and exclude_tags parameters to the [downloads] short code
+* New: Added exclude_category and exclude_tags parameters to the [downloads] shortcode
 * New: Added date parameters to edd_get_payments() to allow payments of specific dates to be queried
 * Fix: A problem with $0 purchases
 * Fix: Problem with display the buyer's first name in purchase receipts
-* Fix: Problem with category/tag query parameters in the [downloads] short code
+* Fix: Problem with category/tag query parameters in the [downloads] shortcode
 * Fix: Problem with PayPal purchases when item names have HTML entities
 * Fix: Problem with prices over 1,000 on checkout
 * Fix: Path to custom edd.css
@@ -1865,11 +2400,11 @@ _REQUIRES WordPress 3.7 or later_
 * Fix: Problem with a stray file upload button in IE and Firefox
 * Fix: Problem with improperly formatted amounts after applying a flat rate discount
 * Fix: two conflicting filter names
-* Fix: A pagination bug with the [downloads] short code
+* Fix: A pagination bug with the [downloads] shortcode
 * Tweak: Improved the error logging system
 * Tweak: Improved the Payment History export to CSV option
 * Tweak: Removed old, out of date PayPal payment gateway
-* Tweak: Improved markup for the [edd_price] short code
+* Tweak: Improved markup for the [edd_price] shortcode
 * Tweak: Updated Dutch translation files
 * Tweak: Improved front-end CSS for variable price options
 * Tweak: Improved logic for determing the lower price on variable priced downloads
@@ -1877,7 +2412,7 @@ _REQUIRES WordPress 3.7 or later_
 
 = 1.3.2.1: November 06, 2012 =
 
-* New: Added basic pagination to the [downloads] short code
+* New: Added basic pagination to the [downloads] shortcode
 * New: Added new "edd_checkout_form_bottom" hook
 * New: Added version numbers to scripts and styles to ensure proper display on upgrades
 * New: Improved the checkout template to make it easier to customize
@@ -1906,7 +2441,7 @@ _REQUIRES WordPress 3.7 or later_
 * New: Integrated Opt-In PressTrends tracking
 * New: Added new edd_price_field action to the download meta box
 * New: Added Lifetime Best Selling into the Dashboard Sales widget
-* Fix: Problem with the [download_discounts] short code
+* Fix: Problem with the [download_discounts] shortcode
 * Fix: Problem with the file download limit feature
 * Fix: Problem with amount formatting in the purchase receipts
 * Fix: Problem with the Apply Discount link when not logged-in
@@ -2015,8 +2550,8 @@ _REQUIRES WordPress 3.7 or later_
 * New: Added new filter to the EDD languages directory
 * New: Added new CSS for improved styling of checkout error messages
 * New: Added new filter to edd_get_checkout_uri
-* New: Added huge new templating system to [download_history] and [purchase_history] short codes
-* New: Added huge new templating system for [downloads] short code
+* New: Added huge new templating system to [download_history] and [purchase_history] shortcodes
+* New: Added huge new templating system for [downloads] shortcode
 * New: Created new global checkout fields and validation methods for use by payment gateways
 * New: Added new "Purchase History" widget
 * New: Added new classes/div to the purchase history widget
@@ -2031,7 +2566,7 @@ _REQUIRES WordPress 3.7 or later_
 * New: Added a new meta key for payment total so that payments can be sorted by amount
 * New: Added a new option to export all customer emails from Payment History
 * New: Added new edd_download_post_type_args filter
-* Fix: Problem with the auto-generated short code on the All Downloads page
+* Fix: Problem with the auto-generated shortcode on the All Downloads page
 * Fix: Problem with new downloads not being able to add download files
 * Fix: Incorrect variable name in register-settings.php
 * Fix: Problem with checkout ajax when permalinks are not enabled
@@ -2085,7 +2620,7 @@ _REQUIRES WordPress 3.7 or later_
 * New: Added new actions to top and bottom of payment history page
 * New: Added class names to all table rows and cells in the checkout template
 * Fix: Misnamed class on the empty cart element
-* Fix: Bug with button colors when inserting a short code
+* Fix: Bug with button colors when inserting a shortcode
 * Fix: Spelling error in Downloads > Settings > Payment Gateways
 * Fix: Major bug with discount codes that caused the "uses" value to get erased when updated a code
 * Fix: Bug with download sales/earnings stats and variable priced downloads
@@ -2129,7 +2664,7 @@ _REQUIRES WordPress 3.7 or later_
 
 = 1.1.4.1: August 07, 2012 =
 
-* New: Added "order" and "orderby" parameters to the [downloads] short code
+* New: Added "order" and "orderby" parameters to the [downloads] shortcode
 * New: Added support for .mobi files
 * New: Add a "No Download Found" message to the PDF reports for when there are no products
 * Fix: Bug with the source file download processing
@@ -2143,9 +2678,9 @@ _REQUIRES WordPress 3.7 or later_
 
 * New: Added Quick Edit ability to the Download Price option
 * New: Added a new PDF Report generation feature for Sales and Earnings, thanks to SunnyRatilal
-* New: Added a new [edd_price] short code
+* New: Added a new [edd_price] shortcode
 * New: Added new edd_cart_contents filter
-* New: Added a check to existing jQuery libraries before enqueing
+* New: Added a check to existing jQuery libraries before enqueuing
 * New: Added is_array() check to the price options name function to fix a potential error
 * New: Added an php_ini check for safe mode
 * Fix: Bug with the purchase receipt templates
@@ -2190,7 +2725,7 @@ _REQUIRES WordPress 3.7 or later_
 
 * New: Added new payment export system, thanks to MadeByMike
 * New: Added a legend to the user info fieldset
-* New: Added a new "class" parameter to the [purchas_link} short code
+* New: Added a new "class" parameter to the [purchas_link} shortcode
 * New: Added new edd_is_checkout() conditional function
 * Fix: Bug with the ajax function that adds items to the cart - it did not show the price option name until page was refreshed
 * Fix: Bug in the purchase receipt that caused it to include all source file links, not just the ones set to the price option purchase
@@ -2239,10 +2774,10 @@ _REQUIRES WordPress 3.7 or later_
 * Fix: Bug with the EDD_READ_FILE_MODE constant
 * Fix: Bug with the file upload meta box fields
 * Tweak: Updated the "View Purchase Details" modal to include the price option purchased, if any
-* Tweak: Updated the purchase/download history short codes to only show files for the price options the user has purchased
+* Tweak: Updated the purchase/download history shortcodes to only show files for the price options the user has purchased
 * Tweak: Made improvements to the checkout registration form layout
-* Tweak: Updated the [purchase_link] short code in the Download Configuration meta box to reflect the chosen button color
-* Tweak: Updated the "Short Code" column in the list table to include the correct button color option
+* Tweak: Updated the [purchase_link] shortcode in the Download Configuration meta box to reflect the chosen button color
+* Tweak: Updated the "Shortcode" column in the list table to include the correct button color option
 * Tweak: Improved some file / function organization
 
 = 1.0.8.5: June 28, 2012 =
@@ -2251,7 +2786,7 @@ _REQUIRES WordPress 3.7 or later_
 * Fix: Bug with the page options in settings
 * Fix: Bug with the function that checks if a user has purchased a specific download
 * Fix: Potential bug with the "settings updated" notice that could have caused duplicate messages to be shown
-* Fix: Bug with the [downloads] short code
+* Fix: Bug with the [downloads] shortcode
 * Tweak: Enhanced the function for checking if a user has purchased a download to add support for checking for specific price options
 * Tweak: Removed the menu_position attribute from the "download" post type to help prevent menu conflicts
 * Tweak: Updated the edd_read_file() function to convert local URLs to absolute file paths
@@ -2260,9 +2795,9 @@ _REQUIRES WordPress 3.7 or later_
 
 * New: Added a few new action hooks
 * New: Added "Settings Updated" notification when saving plugin settings
-* New: Add a parameter to the [downloads] short code for showing the complete content
-* New: Added options for linking the download titles in the [downloads] short code
-* New: Added a "price" parameter to the [downloads] short code
+* New: Add a parameter to the [downloads] shortcode for showing the complete content
+* New: Added options for linking the download titles in the [downloads] shortcode
+* New: Added a "price" parameter to the [downloads] shortcode
 * Fix: Bug with free downloads
 * Fix: Bug with download sale/earning stats going negative when reversing purchases
 * Tweak: Improved the CSS on the variable price option forms
@@ -2271,7 +2806,7 @@ _REQUIRES WordPress 3.7 or later_
 * Tweak: Renamed the "Manual Payment" gateway to "Test"
 * Tweak: Updated Spanish language files
 * Tweak: Removed some blank form action attributes that caused the HTML to invalidate
-* Tweak: Removed the "You have already purchased this" message from the purchase link short code / template
+* Tweak: Removed the "You have already purchased this" message from the purchase link shortcode / template
 
 = 1.0.8.3: June 15, 2012 =
 
@@ -2280,11 +2815,11 @@ _REQUIRES WordPress 3.7 or later_
 * New: Added auto creation for .htaccess files in the uploads directory for EDD to help protect unauthorized file downloads
 * New: Added Turkish language files
 * New: Added detection for php.ini variables important to PayPal payment verification
-* New: Added a new short code for showing a list of active discounts:** [download_discounts]
+* New: Added a new shortcode for showing a list of active discounts:** [download_discounts]
 * New: Added pagination to the download/sale log on download Edit screens
 * New: Added new "edd_default_downloads_name" filter for changing the default singular and plural "download" labels used globally throughout the plugin
-* New: Adding new span.edd-cart-item-separator to the cart widget and short code
-* New: Added more support for the [downloads] short code, used to display a list or grid of digital products
+* New: Adding new span.edd-cart-item-separator to the cart widget and shortcode
+* New: Added more support for the [downloads] shortcode, used to display a list or grid of digital products
 * New: Added option to send purchase receipt when manually marked a payment as complete
 * New: Added new "edd_success_page_redirect" filter to the function that redirects a buyer to the success page
 * New: Added "Payment Method" to the "View Order Details" popup
@@ -2353,7 +2888,7 @@ _REQUIRES WordPress 3.7 or later_
 * New: Added a wrapper div.edd-cart-ajax-alert around the message that shows when an item has been added to the cart
 * Fix: Bug with the discount code form on checkout. It now only shows if there is at least one active discount. Props to Sksmatt
 * Fix: Bug with the Media Uploader when adding media to the content of a Download. Props to Sksmatt
-* Fix: Small error notice present in the checkout form short code. Props to Sksmatt
+* Fix: Small error notice present in the checkout form shortcode. Props to Sksmatt
 * Fix: Small bug wit the edd_remove_item_url() present when on a 404 error page. Props to Sksmatt
 * Tweak: Updated the edd_purchase_link() function to automatically detect chosen link styles and colors
 
@@ -2362,7 +2897,7 @@ _REQUIRES WordPress 3.7 or later_
 * New: edd_has_variable_prices() function
 * New: Added missing "required" classes to the checkout login form
 * New: Added the ability to update the email address associated with payments
-* New: Added a new [edd_login] short code for showing a basic login form
+* New: Added a new [edd_login] shortcode for showing a basic login form
 * New: Added new Dutch language translation files
 * New: Added an $id parameter to the edd_cart_item filter
 * Tweak: Updated French language files
@@ -2450,11 +2985,11 @@ _REQUIRES WordPress 3.7 or later_
 * New: The Italian language files, thanks to Marco.
 * Fix: A bug with the "Add New" button for download source files.
 
-= 1.0.1.3: Early April =
+= 1.0.1.3: April 16, 2012 =
 
 * Fix: A bug with the checkout login / register forms
 
-= 1.0.1.2: Early April =
+= 1.0.1.2: April 15, 2012 =
 
 * New: German translation, thanks to David Decker.
 * New: Partial European Portuguese translation, thanks to Takssista.
@@ -2462,11 +2997,12 @@ _REQUIRES WordPress 3.7 or later_
 * Fix: A bug where sales / earnings counts were increased before a purchase was confirmed.
 * Fix: A bug with the checkout registration / login forms.
 
-= 1.0.1.1: Early April =
+= 1.0.1.1: April 15, 2012 =
 
+* Released on WordPress.org (we consider this date EDD's official birthday)
 * New: Inclusion of INR as an available currency.
 * Fix: Updates to the default.po file for missing strings.
 
-= 1.0: Early April =
+= 1.0: April 7, 2012 =
 
-* First offical release!
+* EDD is born. This release was only available via download at https://easydigitaldownloads.com/blog/easy-digital-downloads-ready-for-first-beta-testers/ or via GitHub. We launched on WordPress.org 10 beta versions later on April 15th as version 1.0.1.1. We consider April 15, 2012, EDD's birthday.

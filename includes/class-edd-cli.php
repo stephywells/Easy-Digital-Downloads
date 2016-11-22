@@ -60,7 +60,7 @@ class EDD_CLI extends WP_CLI_Command {
 
 		WP_CLI::line( sprintf( __( 'You are running EDD version: %s', 'easy-digital-downloads' ), EDD_VERSION ) );
 		WP_CLI::line( "\n" . sprintf( __( 'Test mode is: %s', 'easy-digital-downloads' ), ( edd_is_test_mode() ? __( 'Enabled', 'easy-digital-downloads' ) : __( 'Disabled', 'easy-digital-downloads' ) ) ) );
-		WP_CLI::line( sprintf( __( 'Ajax is: %s', 'easy-digital-downloads' ), ( edd_is_ajax_enabled() ? __( 'Enabled', 'easy-digital-downloads' ) : __( 'Disabled', 'easy-digital-downloads' ) ) ) );
+		WP_CLI::line( sprintf( __( 'AJAX is: %s', 'easy-digital-downloads' ), ( edd_is_ajax_enabled() ? __( 'Enabled', 'easy-digital-downloads' ) : __( 'Disabled', 'easy-digital-downloads' ) ) ) );
 		WP_CLI::line( sprintf( __( 'Guest checkouts are: %s', 'easy-digital-downloads' ), ( edd_no_guest_checkout() ? __( 'Disabled', 'easy-digital-downloads' ) : __( 'Enabled', 'easy-digital-downloads' ) ) ) );
 		WP_CLI::line( sprintf( __( 'Symlinks are: %s', 'easy-digital-downloads' ), ( apply_filters( 'edd_symlink_file_downloads', isset( $symlink_file_downloads ) ) && function_exists( 'symlink' ) ? __( 'Enabled', 'easy-digital-downloads' ) : __( 'Disabled', 'easy-digital-downloads' ) ) ) );
 		WP_CLI::line( "\n" . sprintf( __( 'Checkout page is: %s', 'easy-digital-downloads' ), ( ! edd_get_option( 'purchase_page', false ) ) ? __( 'Valid', 'easy-digital-downloads' ) : __( 'Invalid', 'easy-digital-downloads' ) ) );
@@ -300,7 +300,24 @@ class EDD_CLI extends WP_CLI_Command {
 
 			// Search for customers
 
-			$search    = $customer_id ? $customer_id : $email;
+			$search = false;
+
+			// Checking if search is being done by id, email or user_id fields.
+			if ( $customer_id || $email || ( 'null' !== $user_id ) ) {
+				$search           = array();
+				$customer_details = array();
+
+				if ( $customer_id ) {
+					$customer_details['id'] = $customer_id;
+				} elseif ( $email ) {
+					$customer_details['email'] = $email;
+				} elseif ( null !== $user_id ) {
+					$customer_details['user_id'] = $user_id;
+				}
+
+				$search['customer'] = $customer_details;
+			}
+
 			$customers = $this->api->get_customers( $search );
 
 			if( isset( $customers['error'] ) ) {
@@ -455,7 +472,7 @@ class EDD_CLI extends WP_CLI_Command {
 
 			WP_CLI::line( '' );
 		}
-    }
+	}
 
 
 	/**
@@ -504,10 +521,13 @@ class EDD_CLI extends WP_CLI_Command {
 		$price_id   = false;
 
 		if( count( $assoc_args ) > 0 ) {
-			$number     = ( array_key_exists( 'number', $assoc_args ) )   ? absint( $assoc_args['number'] ) : $number;
-			$id         = ( array_key_exists( 'id', $assoc_args ) )       ? absint( $assoc_args['id'] )     : $id;
-			$price_id   = ( array_key_exists( 'price_id', $assoc_args ) ) ? absint( $assoc_args['id'] )     : false;
-			$tax        = ( array_key_exists( 'tax', $assoc_args ) )      ? floatval( $assoc_args['tax'] )  : 0;
+			$number     = ( array_key_exists( 'number', $assoc_args ) )   ? absint( $assoc_args['number'] )             : $number;
+			$id         = ( array_key_exists( 'id', $assoc_args ) )       ? absint( $assoc_args['id'] )                 : $id;
+			$price_id   = ( array_key_exists( 'price_id', $assoc_args ) ) ? absint( $assoc_args['id'] )                 : false;
+			$tax        = ( array_key_exists( 'tax', $assoc_args ) )      ? floatval( $assoc_args['tax'] )              : 0;
+			$email      = ( array_key_exists( 'email', $assoc_args ) )    ? sanitize_email( $assoc_args['email'] )      : 'guest@local.dev';
+			$fname      = ( array_key_exists( 'fname', $assoc_args ) )    ? sanitize_text_field( $assoc_args['fname'] ) : 'Pippin';
+			$lname      = ( array_key_exists( 'lname', $assoc_args ) )    ? sanitize_text_field( $assoc_args['lname'] ) : 'Williamson';
 
 			// Status requires a bit more validation
 			if( array_key_exists( 'status', $assoc_args ) ) {
@@ -537,9 +557,9 @@ class EDD_CLI extends WP_CLI_Command {
 		// Build the user info array
 		$user_info = array(
 			'id'            => 0,
-			'email'         => 'guest@local.dev',
-			'first_name'    => 'Pippin',
-			'last_name'     => 'Williamson',
+			'email'         => $email,
+			'first_name'    => $fname,
+			'last_name'     => $lname,
 			'discount'      => 'none'
 		);
 
@@ -629,7 +649,7 @@ class EDD_CLI extends WP_CLI_Command {
 				'price'	        => edd_sanitize_amount( $total ),
 				'tax'           => 0,
 				'purchase_key'  => strtolower( md5( uniqid() ) ),
-				'user_email'    => 'guest@local.dev',
+				'user_email'    => $email,
 				'user_info'     => $user_info,
 				'currency'      => edd_get_currency(),
 				'downloads'     => $final_downloads,

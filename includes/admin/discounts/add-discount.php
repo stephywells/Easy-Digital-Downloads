@@ -11,7 +11,6 @@
 
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) exit;
-$downloads = get_posts( array( 'post_type' => 'download', 'nopaging' => true ) );
 ?>
 <h2><?php _e( 'Add New Discount', 'easy-digital-downloads' ); ?> - <a href="<?php echo admin_url( 'edit.php?post_type=download&page=edd-discounts' ); ?>" class="button-secondary"><?php _e( 'Go Back', 'easy-digital-downloads' ); ?></a></h2>
 <form id="edd-add-discount" action="" method="POST">
@@ -58,8 +57,8 @@ $downloads = get_posts( array( 'post_type' => 'download', 'nopaging' => true ) )
 				</th>
 				<td>
 					<input type="text" id="edd-amount" name="amount" value="" style="width: 40px;"/>
-					<p class="description edd-amount-description" style="display:none;"><?php printf( __( 'Enter the discount amount in %s', 'easy-digital-downloads' ), edd_get_currency() ); ?></p>
-					<p class="description edd-amount-description"><?php _e( 'Enter the discount percentage. 10 = 10%', 'easy-digital-downloads' ); ?></p>
+					<p class="description edd-amount-description flat-discount" style="display:none;"><?php printf( __( 'Enter the discount amount in %s', 'easy-digital-downloads' ), edd_get_currency() ); ?></p>
+					<p class="description edd-amount-description percent-discount"><?php _e( 'Enter the discount percentage. 10 = 10%', 'easy-digital-downloads' ); ?></p>
 				</td>
 			</tr>
 			<?php do_action( 'edd_add_discount_form_before_products' ); ?>
@@ -73,8 +72,8 @@ $downloads = get_posts( array( 'post_type' => 'download', 'nopaging' => true ) )
 							'name'        => 'products[]',
 							'id'          => 'products',
 							'multiple'    => true,
-                            'chosen'      => true,
-                            'placeholder' => sprintf( __( 'Select one or more %s', 'easy-digital-downloads' ), edd_get_label_plural() )
+							'chosen'      => true,
+							'placeholder' => sprintf( __( 'Select one or more %s', 'easy-digital-downloads' ), edd_get_label_plural() ),
 						) ); ?><br/>
 					</p>
 					<div id="edd-discount-product-conditions" style="display:none;">
@@ -92,10 +91,10 @@ $downloads = get_posts( array( 'post_type' => 'download', 'nopaging' => true ) )
 							<label>
 								<input type="radio" class="tog" name="not_global" value="1"/>
 								<?php printf( __( 'Apply discount only to selected %s.', 'easy-digital-downloads' ), edd_get_label_plural() ); ?>
-							</label>	
+							</label>
 						</p>
 					</div>
-					<p class="description"><?php printf( __( 'Select %s relevant to this discount.', 'easy-digital-downloads' ), edd_get_label_plural() ); ?></p>
+					<p class="description"><?php printf( __( 'Select %s relevant to this discount. If left blank, this discount can be used on any product.', 'easy-digital-downloads' ), edd_get_label_plural() ); ?></p>
 				</td>
 			</tr>
 			<?php do_action( 'edd_add_discount_form_before_excluded_products' ); ?>
@@ -105,12 +104,12 @@ $downloads = get_posts( array( 'post_type' => 'download', 'nopaging' => true ) )
 				</th>
 				<td>
 					<?php echo EDD()->html->product_dropdown( array(
-						'name'     => 'excluded-products[]',
-						'id'       => 'excluded-products',
-						'selected' => array(),
-						'multiple' => true,
-                        'chosen'   => true,
-                        'placeholder' => sprintf( __( 'Select one or more %s', 'easy-digital-downloads' ), edd_get_label_plural() )
+						'name'        => 'excluded-products[]',
+						'id'          => 'excluded-products',
+						'selected'    => array(),
+						'multiple'    => true,
+						'chosen'      => true,
+						'placeholder' => sprintf( __( 'Select one or more %s', 'easy-digital-downloads' ), edd_get_label_plural() ),
 					) ); ?><br/>
 					<p class="description"><?php printf( __( '%s that this discount code cannot be applied to.', 'easy-digital-downloads' ), edd_get_label_plural() ); ?></p>
 				</td>
